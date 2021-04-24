@@ -1,8 +1,8 @@
 # [Don-key](https://don-key.finance/) Finance Bounty Challenge
 
 ### Bounty Rewards: 
-We will reward $1500 to the person who is first delivering a successfully working solution and $1000 to the second one. 
-Both persons will be offered a full-time developoer position on Don-key.
+We will reward **$1500** to the person who is **first** delivering a successfully working solution and **$1000** to the **second** one. 
+Both persons will be **offered a full-time developoer position** on Don-key.
 All submissions have to be working to be considered. 
 We'll start reviewing submissions as soon as they arrive and select the first ones that are successul.
 
