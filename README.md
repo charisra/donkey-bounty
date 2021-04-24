@@ -10,7 +10,8 @@ Note: You can perform the examples steps above as a user by visiting the Alpacaf
 
 **Strategy**:
 The strategy accepts a list of cubes and runs them one after another in order. 
-In code it looks like this:
+In code it looks like below.
+You will not need to change the Solidity code below, it's included here to help you understand how a Strategy is run:
 
     // in a .sol file
     contract Strategy {
@@ -122,6 +123,8 @@ Given the **Strategy** below, write the code needed for the Cubes, so that when 
 ### The code has to be written in Web3 and be capable of running from the frontend. Example code below from another, sample strategy:
 
     // in a .js file
+    import abi from "{PATH_TO_PANCAKESWAP_ABI}";
+    
     var Amount = web3.utils.toWei('1');
     var BDOaddress="0x190b589cf9Fb8DDEabBFeae36a813FFb2A702454";
     var BUSDaddress = "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56";
