@@ -150,11 +150,14 @@ Given the **Strategy** below, write the code needed for the Cubes, so that when 
     //Strategy = declaration of strategy contract instance
     ...
     
-    //The following line is an example of cube data declarations. Each one is a call of a function which is in the pancakeRouter contract with the respective         parameters
+    //The following line is an example of cube data declarations. Each one is a call of a function which is in the pancakeRouter contract with the respective parameters
     var data1= PancakeRouter.methods.swapExactTokensForTokens(Amount,0,[BUSDaddress,BDOaddress],strategyAddress,blockData.timestamp+10).encodeABI();
     var data2= PancakeRouter.methods.swapExactTokensForTokens(Amount,0,[BUSDaddress,WBNBaddress],strategyAddress,blockData.timestamp+10).encodeABI();
 
-    //The folloing line is an example of loading the 2 cubes into a strategy.They will be executed in this order
+    //The following line is an example of loading the 2 cubes into a strategy.They will be executed in this order
     var addCubes = await Strategy.methods.addCubes([PancakeRouteraddress,PancakeRouteraddress],[data1,data2]).send({ from: accounts[0] });
 
 For questions regarding the bounty challenge send a DM to br#7886 on Discord
+
+### How to submit
+Send a .zip with your solution to br#7886 on Discord
