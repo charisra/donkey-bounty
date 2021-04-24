@@ -8,8 +8,10 @@ All submissions have to be working to be considered.
 **Intro**: Don-key is a social trading platform for crypto yield farming. Investors have the option to copy proven-to-work and profitable yield farming Strategies from well-known farmers. 
 
 **Cubes**: A cube is a specific action, an investment step that runs on a specific protocol like [Ellipsis](https://www.ellipsis.finance/), [Pancakeswap](https://pancakeswap.finance/) etc. 
-- Cube example 1: Deposit BUSD on Alpacafinance to get ibBUSD as a reward.
-- Cube example 2: Stake ibBUSD  on Alpacafinance to get ALPACA rewards
+Each cube has 2 parts. The first one the the address of the protocol it is calling to and the second one is an encoded data package which contains the function and parameters of the call.
+
+- Cube example 1: Deposit BUSD on Alpacafinance,get ibBUSD as a reward.
+- Cube example 2: Stake ibBUSD  on Alpacafinance, get ALPACA rewards
 
 Note: You can perform the examples steps above as a user by visiting the Alpacafinance website.
 
@@ -128,19 +130,31 @@ Given the **Strategy** below, write the code needed for the Cubes, so that when 
 ### The code has to be written in Web3 and be capable of being run from the frontend. Example code below from another, sample strategy:
 
     // in a .js file
-    import abi from "{PATH_TO_PANCAKESWAP_ABI}";
     
-    var Amount = web3.utils.toWei('1');
+ 
+    ...
+    //relevent imports
+    //web3 declerations
+    //accounts declerations
+    ...
+    
+    var WBNBaddress="0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c";
     var BDOaddress="0x190b589cf9Fb8DDEabBFeae36a813FFb2A702454";
     var BUSDaddress = "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56";
-
-    // Declarations of the strategy contract address, the pool contract address and the address of every protocol we would like to get a cube of
-    var poolAddress = "0x20650450B725AE64763b88aD95AD8e9D11028C0b";
     var strategyAddress = "0xB885aF37aDb11e200747Ae9E8f693d0E44751c09";
     var PancakeRouteraddress="0x05fF2B0DB69458A0750badebc4f9e13aDd608C7F";
+    
+    var Amount = web3.utils.toWei('1');
+    ...
+    //PancakeRouter = declaration of pancakeswap router contract instance
+    //Strategy = declaration of strategy contract instance
+    ...
+    
+    //The following line is an example of cube data declarations. Each one is a call of a function which is in the pancakeRouter contract with the respective         parameters
+    var data1= PancakeRouter.methods.swapExactTokensForTokens(Amount,0,[BUSDaddress,BDOaddress],strategyAddress,blockData.timestamp+10).encodeABI();
+    var data2= PancakeRouter.methods.swapExactTokensForTokens(Amount,0,[BUSDaddress,WBNBaddress],strategyAddress,blockData.timestamp+10).encodeABI();
 
-    PancakeRouter=[abi,PancakeRouteraddress];
-    var data= PancakeRouter.methods.swapExactTokensForTokens(Amount,0,[BUSDaddress,BDOaddress],strategyAddress,blockData.timestamp+10000).encodeABI();
-    var addCubes = await Strategy.methods.addCubes([PancakeRouteraddress,PancakeRouteraddress,PancakeRouter],[data]).send({ from: accounts[0] });
+    //The folloing line is an example of loading the 2 cubes into a strategy.They will be executed in this order
+    var addCubes = await Strategy.methods.addCubes([PancakeRouteraddress,PancakeRouteraddress],[data1,data2]).send({ from: accounts[0] });
 
 For questions regarding the bounty challenge send a DM to br#7886 on Discord
