@@ -1,5 +1,10 @@
 # Don-key Finance Bounty Challenge
 
+### Bounty Rewards: 
+We will reward $1500 to the person who is first delivering a successfully working solution and $1000 to the second one. 
+Both persons will be offered a full-time developoer position on Don-key.
+All submissions have to be working to be considered. 
+
 **Intro**: Don-key is a social trading platform for crypto yield farming. Investors have the option to copy proven-to-work and profitable yield farming Strategies from well-known farmers. 
 
 **Cubes**: A cube is a specific action, an investment step that runs on a specific protocol like [Ellipsis](https://www.ellipsis.finance/), [Pancakeswap](https://pancakeswap.finance/) etc. 
@@ -138,4 +143,4 @@ Given the **Strategy** below, write the code needed for the Cubes, so that when 
     var data= PancakeRouter.methods.swapExactTokensForTokens(Amount,0,[BUSDaddress,BDOaddress],strategyAddress,blockData.timestamp+10000).encodeABI();
     var addCubes = await Strategy.methods.addCubes([PancakeRouteraddress,PancakeRouteraddress,PancakeRouter],[data]).send({ from: accounts[0] });
 
-
+For questions regarding the bounty challenge send a DM to br#7886 on Discord
