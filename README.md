@@ -2,7 +2,11 @@
 
 **Intro**: Don-key is a social trading platform for crypto yield farming. Investors have the option to copy proven-to-work and profitable yield farming Strategies from well-known farmers. 
 
-**Cubes**: A cube is a specific action, an investment step that runs on a specific protocol like Ellipsis, Pancakeswap etc.  Cube example 1:  Deposit BUSD on Alpacafinance to get ibBUSD as a reward. Cube example 2: Stake ibBUSD  on Alpacafinance to get ALPACA rewards Note: You can the examples above as a user by visiting the Alpacafinance website.
+**Cubes**: A cube is a specific action, an investment step that runs on a specific protocol like [Ellipsis](https://www.ellipsis.finance/), [Pancakeswap](https://pancakeswap.finance/) etc. 
+- Cube example 1: Deposit BUSD on Alpacafinance to get ibBUSD as a reward.
+- Cube example 2: Stake ibBUSD  on Alpacafinance to get ALPACA rewards
+
+Note: You can perform the examples steps above as a user by visiting the Alpacafinance website.
 
 **Strategy**:
 The strategy accepts a list of cubes and runs them one after another in order. 
