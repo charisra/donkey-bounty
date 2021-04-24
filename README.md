@@ -120,7 +120,7 @@ Given the **Strategy** below, write the code needed for the Cubes, so that when 
 3. When the ALPACA balance reaches $1000 value, transfer the rewarded ALPACA to Pancakeswap
 4. On Pancakeswap swap ALPACA for BUSD and start over from step 1
 
-### The code has to be written in Web3 and be capable of running from the frontend. Example code below from another, sample strategy:
+### The code has to be written in Web3 and be capable of being run from the frontend. Example code below from another, sample strategy:
 
     // in a .js file
     import abi from "{PATH_TO_PANCAKESWAP_ABI}";
